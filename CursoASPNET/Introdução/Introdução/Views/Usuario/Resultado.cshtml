@@ -1,0 +1,75 @@
+﻿@model Introdução.Models.Usuario
+
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado</h2>
+
+
+<fieldset>
+
+    @*NOME*@
+
+    <legend>Dados do Usuário</legend>
+    <div class="editor-label">
+
+        @Html.DisplayNameFor(model => model.Nome)
+
+    </div>
+    <div class="editor-field">
+
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+
+    @*OBSERVAÇÕES*@
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Observacoes)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Observacoes)
+    </div>
+
+    @*IDADE*@
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Idade)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Idade)
+    </div>
+
+    @*EMAIL*@
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    @*LOGIN*@
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    @*SENHA*@
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Senha)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Senha)
+    </div>
+
+    <p>@Html.ActionLink("Voltar", "Usuario")</p>
+</fieldset>
+
+

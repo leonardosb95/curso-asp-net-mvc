@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model Introdução.Models.Pessoa
+
+
+<h2>Hugo vasconcelos</h2>
+<p>Com Leonardo dos Santos bispo</p>
+
+
+
+
+<br />
+<br />
+<br />
+
+@*Chamando com ViewData*@
+
+@*<p>@ViewData["PessoaId"]</p>
+<p>@ViewData["Nome"]</p>
+<p>@ViewData["Tipo"]</p>*@
+
+@*Chamando com ViewBag*@
+@*<p>@ViewBag.id</p>
+<p>@ViewBag.Nome</p>
+<p>@ViewBag.Tipo</p>*@
+
+
+@*VIEW tipada*@
+
+@*<form action="Lista" method="GET">*@
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+
+
+    <fieldset>
+        <legend>Informações das Pessoas</legend>
+
+
+        <div>
+            <label for="PessoaId">@Html.LabelFor(x => x.PessoaId)</label>
+        </div>
+
+        <div>
+            @*<input type="number" value="@Model.PessoaId" name="PessoaId" />*@
+            @Html.EditorFor(x => x.PessoaId)
+        </div>
+
+
+        <div>
+            <label for="Nome">@Html.LabelFor(x => x.Nome)</label>
+        </div>
+
+        <div>
+            @*<input type="text" value="@Model.Nome" name="Nome" />*@
+            @Html.EditorFor(x => x.Nome)
+        </div>
+
+        <div>
+            <label for="Tipo">@Html.LabelFor(x => x.Tipo)</label>
+        </div>
+
+        <div>
+            @*<input type="text" value="@Model.Tipo" name="Tipo" />*@
+            @Html.EditorFor(x => x.Tipo)
+        </div>
+
+        <p><input type="submit" value="Enviar"/></p>
+
+    </fieldset>
+}
+
+
+
+@*</form>*@
+

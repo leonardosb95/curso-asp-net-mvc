@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    @*Renderizando o topo da pagina, chamando ele com RenderPage*@
+    @RenderPage("~/Views/Shared/_Topo.cshtml");
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        @if (IsSectionDefined("rodape"))
+        {
+
+            @RenderSection("rodape")
+
+        }
+        else
+        {
+            @*Renderizando o topo da pagina, chamando ele com Html.Partial*@
+            @Html.Partial("_Rodape")
+        }
+
+       
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
